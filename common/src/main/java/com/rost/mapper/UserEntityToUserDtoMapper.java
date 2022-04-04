@@ -3,6 +3,10 @@ package com.rost.mapper;
 import com.rost.dto.UserDto;
 import com.rost.entity.UserEntity;
 
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class UserEntityToUserDtoMapper {
 
     public UserDto map(UserEntity user) {
@@ -14,6 +18,8 @@ public class UserEntityToUserDtoMapper {
     }
 
     private String getFullUserName(UserEntity user) {
-        return user.getLastName().concat(user.getFirstName()).concat(user.getPatronymicName());
+        return Stream.of(user.getLastName(), user.getFirstName(), user.getPatronymicName())
+                .filter(Objects::nonNull)
+                .collect(Collectors.joining());
     }
 }

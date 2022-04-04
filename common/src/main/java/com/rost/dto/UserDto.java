@@ -2,16 +2,14 @@ package com.rost.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
-@Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder(toBuilder = true)
+@Value
 public class UserDto {
 
-     private String fullName;
-     private int age;
-     private String email;
+     String fullName;
+     int age;
+     String email;
 }

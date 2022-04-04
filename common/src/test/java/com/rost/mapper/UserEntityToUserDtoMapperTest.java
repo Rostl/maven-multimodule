@@ -12,12 +12,12 @@ public class UserEntityToUserDtoMapperTest {
     private UserEntityToUserDtoMapper userEntityToUserDtoMapper;
 
     @Before
-    public void before(){
+    public void before() {
         userEntityToUserDtoMapper = new UserEntityToUserDtoMapper();
     }
 
     @Test
-    public void userEntityToUserDtoMappingTest(){
+    public void userEntityToUserDtoMappingTest() {
         UserDto expected = CommonTestUtil.userDtoBuilder();
         UserEntity userEntity = CommonTestUtil.userEntityBuilder()
                 .orElseThrow(() -> new RuntimeException("User is not present"));
